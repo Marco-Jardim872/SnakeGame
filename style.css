@@ -1,26 +1,191 @@
 *{
+    margin: 0;
     padding: 0;
-    box-sizing: border-box;
-   
+    box-sizing: border-box;  
 }
 body{
-    background-color: rgb(5, 92, 92);
-}
-h1{
-    margin-top: 30px;
-    color: blanchedalmond;
-    text-align: center;
-    font-size: 3.5em;
-    text-shadow: 3px 3px 3px black;
-}
-#telaJogo{
-    margin: auto;
-    margin-top: 70px;
+    font-family: "Open Sans", sans-serif;
+    height: 95vh;
+    display:flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
+    background-color: #b3b3b3;
+    margin: auto;
+    background-image: url(./img/MIC4.jpg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+       
+}
+#all{
+    display:flex;
+    width: 100vw;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+#draw{
     display: flex;
-    box-shadow: 3px 3px 2px black;
-     
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+}
+button{
+    padding: 3px;
+   font-size: 2em;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px black;
+
+}
+#container{
+    margin-left: 50px;
+    width: max-content;
+    display:flex;
+    flex-direction: column;
+    height: 500px;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+#snake{
+    width: min-content;
+    margin: auto;
+    display: flex;
+    box-shadow: 4px 4px 5px black;
+    background-image: url(./img/bg.png);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.inf{
+display: block;
+margin-top: 5px;
+flex-wrap: wrap;
+
+}
+#tamSnake, #record{
+    padding: 3px;
+    width: max-content;
+    height: max-content;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px black;
+    font-size: 20px;
 }
 
+label{
+    display: block;
+    font-size: 20px;
+    text-shadow:2px 2px 4px #000000;
+}
+
+/* ------------------------- */
+/* POPUP */
+/* ------------------------- */
+
+.overlay {
+   position:absolute;
+    background: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    visibility: hidden;
+    max-height: max-content;
+      
+  }
+  
+  .overlay.active {
+    visibility: visible;
+  }
+  #snakepop{
+      width: 90%;
+    
+  }
+  .popup {
+    background: #f8f8f8;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    
+    font-family: "Montserrat", sans-serif;
+    padding: 20px;
+    text-align: center;
+    width: 600px;
+    transition: 0.3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  
+  .popup .btn-cerrar-popup {
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    text-decoration: none;
+    justify-content: right;
+    text-align: right;
+    transition: 0.3s ease all;
+    color: #155f0c;
+  }
+  
+  .popup .btn-cerrar-popup:hover {
+    color: rgb(197, 195, 195);
+  }
+  
+  .popup h3 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0;
+    color: #006633;
+  }
+  
+  .popup h4 {
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0;
+    color: rgb(185, 10, 10);
+  }
+  
+    
+  /* ------------------------- */
+  /* ANIMACIONES */
+  /* ------------------------- */
+  .popup.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .popup.active h3 {
+    animation: entradaTitulo 0.8s ease 0.5s forwards;
+  }
+  .popup.active h4 {
+    animation: entradaSubtitulo 0.8s ease 0.5s forwards;
+  }
+  
+  
+  @keyframes entradaTitulo {
+    from {
+      opacity: 0;
+      transform: translateY(-25px);
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes entradaSubtitulo {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  

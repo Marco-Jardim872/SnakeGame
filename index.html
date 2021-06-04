@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Snake Game</title>
-    <link rel="stylesheet" href="style.css"
 </head>
-
 <body>
+    <div id="all">
+        <div id="draw">
+            <canvas id="snake" width="512" height="512"></canvas>
+        </div>
+        <div id="container">
+            <div id="buttons">
+                <button onclick="startGame()" id="start">START GAME</button>
+                <button onclick="pauseGame()" id="pause">PAUSE GAME</button>
+                <button onclick="endGame()" id="end">END GAME</button>
+            </div>
+            <div class="inf">
+                <label for="tamSnake">Tamanho Cobra:</label>
+                <input type="text" id="tamSnake" name="tamSnake">
+                <label for="record">Maior Cobra:</label>
+                <input type="text" id="record" name="record">
+            </div>
+        </div>
+        <div class="overlay" id="overlay">
+            <div class="popup" id="popup">
+                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">X</a>
+                <h3>GAME OVER</h3>
+                <h4>Oh No!!!!</h4>
+                <img id="snakepop" src="./img/SNAKE2.png">
+            </div>
+        </div>
+    </div>
 
-    <h1>Snake Game</h1>
-  
-    <canvas id="telaJogo" width="512" height="512"></canvas>
-      
-  
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
-
 </html>
